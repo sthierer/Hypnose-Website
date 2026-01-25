@@ -64,7 +64,9 @@ if (toggle && nav && header) {
   /* =====================================================
      AKTIVE SEITE MARKIEREN
      ===================================================== */
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  // const currentPage = location.pathname.split('/').pop() || 'index.html';
+  const currentPage = location.pathname.split('/')[1];
+
   document.querySelectorAll('nav a').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage) {
