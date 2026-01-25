@@ -1,48 +1,59 @@
+
 /* =====================================================
-   ROOT / VARIABLEN
+   ROOT / VARIABLES
    ===================================================== */
 
+/* 
+   Globale Farb- und Layoutvariablen 
+   → erleichtern das Styling und spätere Änderungen   
+*/
 :root{
-  --bg:#F7F9F8;
-  --text:#0f172a;
-  --muted:#475569;
-  --surface:#bbbbbb;
-  --border:#e2e8f0;
-  --brand:#1024b9;
-  --brand-dark:#047857;
-  --accent:#14b8a6;
+  --bg:#F7F9F8;           /* Haupt-Hintergrundfarbe */
+  --text:#0f172a;         /* Primäre Schriftfarbe */
+  --muted:#475569;        /* Gedämpfte Textfarbe */
+  --surface:#bbbbbb;      /* Oberflächen-/Hoverfarbe */
+  --border:#e2e8f0;       /* Standard-Rahmenfarbe */
+  --brand:#1024b9;        /* Hauptmarkenfarbe */
+  --brand-dark:#047857;   /* Dunklere Akzentfarbe */
+  --accent:#14b8a6;       /* Akzentfarbe für Elemente */
 }
 
 /* =====================================================
    RESET / BASIS
    ===================================================== */
 
+/* Entfernt Standardabstände und stellt Berechnung um */
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Weiches Scrollen für interne Ankerlinks */
 html{
   scroll-behavior: smooth;
 }
 
+/* Grundlegender Body-Style */
 body{
   background: var(--bg);
   color: var(--text);
   font: 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 }
 
+/* Bilder passen sich ihrer Containerbreite an */
 img{
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Standardlink: keine Unterstreichung */
 a{
   text-decoration: none;
 }
 
+/* Zentrale Containergröße */
 .container{
   width: min(1100px, 92%);
   margin-inline: auto;
@@ -50,17 +61,17 @@ a{
 
 /* =====================================================
    ===== Mobile =====
-   iPhone / Android (Default)
+   Standard-Layout für Smartphones
    ===================================================== */
 
 /* ---------- Header ---------- */
 
 .header{
-  position: sticky;
+  position: sticky;             /* bleibt oben sichtbar */
   top: 0;
   background: #fff;
   border-bottom: 1px solid var(--border);
-  z-index: 1000;
+  z-index: 1000;                /* überlappt Inhalte */
 }
 
 .header-inner{
@@ -80,6 +91,7 @@ a{
   color: var(--text);
 }
 
+/* Logo-Icon / farbiges Quadrat */
 .logo-mark{
   width: 28px;
   height: 28px;
@@ -89,6 +101,7 @@ a{
 
 /* ---------- Navigation ---------- */
 
+/* Toggle-Button für Mobile Navigation */
 .nav-toggle{
   background: none;
   border: 1px solid var(--border);
@@ -98,6 +111,7 @@ a{
   cursor: pointer;
 }
 
+/* Mobile Navigation: ausgeblendet */
 nav{
   position: absolute;
   top: 100%;
@@ -108,10 +122,12 @@ nav{
   display: none;
 }
 
+/* Wird sichtbar durch JS-Klasse */
 nav.open{
   display: block;
 }
 
+/* Navigation-Liste */
 nav ul{
   list-style: none;
   padding: 1rem;
@@ -120,6 +136,7 @@ nav ul{
   gap: .75rem;
 }
 
+/* Navigation Links */
 nav a{
   padding: .6rem .8rem;
   border-radius: .4rem;
@@ -127,10 +144,12 @@ nav a{
   display:block;
 }
 
+/* Hovereffekt */
 nav a:hover{
   background: var(--surface);
 }
 
+/* Helper-Klasse für Unterstreichungen */
 .underline{
   text-decoration:underline;
   text-decoration-thickness: 2px;
@@ -138,27 +157,30 @@ nav a:hover{
 
 /* =====================================================
    ===== Tablets =====
-   iPad hochkant / große Phones quer
+   Größere Abstände für Tablets
    ===================================================== */
 
 @media (min-width: 768px){
 
+  /* Navigation Padding größer */
   nav ul{
     padding: 1.25rem 2rem;
   }
 }
 
 /* =====================================================
-   ===== iPad =====
-   iPad quer / große Tablets
+   ===== iPad quer / große Tablets =====
+   Desktop-ähnliche Navigation
    ===================================================== */
 
 @media (min-width: 1024px){
 
+  /* Nav-Toggle verschwindet */
   .nav-toggle{
     display: none;
   }
 
+  /* Navigation wird horizontal */
   nav{
     position: static;
     display: block;
@@ -171,15 +193,14 @@ nav a:hover{
     padding: 0;
     gap: 1rem;
   }
-
 }
 
+/* Kalender-Icon vor "Buchen" Link */
 a[href="./Buchen.html"] {
-  display: inline-flex;
+  display: flex; 
   align-items: center;
   gap: 0.4rem;
 }
-
 
 a[href="./Buchen.html"]::before {
   content: "";
@@ -191,17 +212,20 @@ a[href="./Buchen.html"]::before {
 
 /* =====================================================
    ===== Desktop =====
-   Laptop / PC / große Screens
+   Größere Containerbreite
    ===================================================== */
 
 @media (min-width: 1280px){
-
   .container{
     width: min(1200px, 90%);
   }
-
 }
 
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+/* Wrapper für Hero-Bild */
 .hero-section {
   display: flex;
   justify-content: center;
@@ -213,11 +237,12 @@ a[href="./Buchen.html"]::before {
 }
 
 .hero-img {
-  display: block; /* entfernt unerwünschte Abstände */
+  display: block;
   width: 100%;
   height: auto;
 }
 
+/* Text & Button über dem Hero-Bild */
 .hero-content {
   position: absolute;
   top: 2%;
@@ -226,21 +251,22 @@ a[href="./Buchen.html"]::before {
   max-width: 90%;
 }
 
+/* Call-to-Action Button */
 .hero-btn {
-background: #e4bc8e;
-color: white;
-padding: 0.6rem 1.2rem;
-border-radius: 30px;
-text-decoration: none;
-font-weight: 600;
-margin-top: 1rem;
-display: inline-flex;
-align-items: center;
-font-size: 0.9rem;
-gap: 0.5rem;
+  background: #e4bc8e;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 0.5rem;
 }
 
-
+/* Icon im Button */
 .hero-btn::before {
   content: "";                    
   display: inline-block;
@@ -252,11 +278,12 @@ gap: 0.5rem;
   background-size: contain;       
 }
 
-
+/* Hovereffekt */
 .hero-btn:hover{
   background: #e29031;
 }
 
+/* Buttongrößen auf größeren Screens */
 @media (min-width: 768px) {
   .hero-btn {
     padding: 0.75rem 1.5rem;
@@ -280,7 +307,10 @@ gap: 0.5rem;
     margin-top: 5%;
   }
 }
-/* ---------- Service ---------- */
+
+/* =====================================================
+   SERVICES SECTION
+   ===================================================== */
 
 .leistungen {
   padding: 4rem 2rem;
@@ -288,6 +318,7 @@ gap: 0.5rem;
   margin: auto;
 }
 
+/* Titel der Services */
 .leistungen h3 {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
@@ -295,12 +326,14 @@ gap: 0.5rem;
   text-align: center;
 }
 
+/* Grid-Layout für Serviceboxen */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
+/* Einzelne Servicebox */
 .service-box {
   background: white;
   padding: 2rem;
@@ -314,20 +347,11 @@ gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
+/* =====================================================
+   CONTENT SECTION
+   ===================================================== */
 
-
-/* Erstes Bild-Content */
-/*===============================*/
-
-/* Hintergrund wie im Hero – weicher Verlauf */
-/* body {
-  background: linear-gradient(90deg, #e7d3b4, #d8c19b);
-  margin: 0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-  color: #2c2b29;
-} */
-
-/* Sektion: sanfte „Karte“ auf beigem Verlauf */
+/* Umrahmter Bereich */
 .section-hypno {
   max-width: 1200px;
   margin: clamp(24px, 5vw, 64px) auto;
@@ -339,17 +363,18 @@ gap: 0.5rem;
   box-shadow: 0 12px 30px rgba(0,0,0,.08);
 }
 
-/* Split-Layout */
+/* Split-Layout (Bild / Text) */
 .split-hypno {
   display: grid;
-  grid-template-columns: 1.05fr .95fr; /* Bild leicht größer */
+  grid-template-columns: 1.05fr .95fr;
   gap: clamp(16px, 3vw, 40px);
   align-items: center;
 }
 
+/* Auf Mobile: Bild nach oben */
 @media (max-width: 900px) {
   .split-hypno { grid-template-columns: 1fr; }
-  .media { order: -1; } /* Bild oben auf Mobile */
+  .media { order: -1; }
 }
 
 /* Bildrahmen */
@@ -361,21 +386,29 @@ gap: 0.5rem;
   border: 1px solid rgba(255,255,255,.6);
   transform: translateZ(0);
 }
+
 .frame img{
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
   filter: saturate(.95) contrast(1.02);
   transition: transform .6s ease;
 }
-.frame:hover img{ transform: scale(1.02); }
+
+.frame:hover img{ 
+  transform: scale(1.02); 
+}
 
 /* Textbereich */
-.content { padding: clamp(6px, 1vw, 10px) clamp(6px, 1vw, 10px); }
+.content { 
+  padding: clamp(6px, 1vw, 10px); 
+}
 
 .content h2 {
   font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem);
   line-height: 1.2;
-  margin: 0 0 .6rem;
-  color: #fff; /* fügt sich zur weißen Hero-Headline */
+  margin-bottom: .6rem;
+  color: #fff;
   text-shadow: 0 1px 0 rgba(0,0,0,.04);
 }
 
@@ -383,79 +416,78 @@ gap: 0.5rem;
   color: #f9f6f2;
   opacity: .95;
   font-size: clamp(1rem, .95rem + .4vw, 1.15rem);
-  margin: 0 0 1rem;
+  margin-bottom: 1rem;
   max-width: 60ch;
 }
 
-/* Bulletliste – dezent */
+/* Bulletliste */
 .bullets {
-  margin: .2rem 0 1.4rem;
-  padding: 0;
   list-style: none;
   color: #fff;
   opacity: .95;
+  margin-bottom: 1.4rem;
 }
+
 .bullets li {
   margin: .35rem 0;
   padding-left: 1.4rem;
   position: relative;
 }
+
 .bullets li::before{
   content: "•";
-  position: absolute; left: 0;
+  position: absolute; 
+  left: 0;
   color: #ffe2c7;
 }
 
-/* Aktionen/Buttons – wie im Hero: weich & rund */
-.actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+/* Buttons */
+.actions { 
+  display: flex; 
+  gap: .75rem; 
+  flex-wrap: wrap; 
+}
 
 .actions a.btn {
-  display: inline-flex; align-items: center; gap: .5rem;
+  display: inline-flex; 
+  align-items: center; 
+  gap: .5rem;
   padding: .9rem 1.2rem;
   border-radius: 999px;
   background: #e7c3a3;
   color: #2c2b29;
-  text-decoration: none; font-weight: 600;
+  text-decoration: none; 
+  font-weight: 600;
   border: 1px solid rgba(0,0,0,.05);
   box-shadow: 0 8px 24px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.5);
   transition: transform .1s ease, box-shadow .2s ease, background .2s ease;
 }
-.actions a.btn:hover { transform: translateY(-1px); }
-.actions a.btn:focus-visible {
-  outline: 3px solid rgba(255,255,255,.7);
-  outline-offset: 3px;
+
+.actions a.btn:hover { 
+  transform: translateY(-1px); 
 }
 
-/* Sekundärer Link-Button */
 .actions a.btn.secondary{
   background: rgba(255,255,255,.25);
   color: #fff;
   border: 1px solid rgba(255,255,255,.45);
 }
 
-/* Variante: Bild rechts */
+/* Variante für Bild rechts */
 .section-hypno.right .media { order: 2; }
 .section-hypno.right .content { order: 1; }
 
+/* =====================================================
+   FAQ SECTION
+   ===================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-/* Fragen Sektion */
 .faq {
   padding: 90px 8%;
   background: #faf7f2;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* FAQ Titel */
 .faq h2 {
   font-size: 2.4rem;
   font-weight: 500;
@@ -464,7 +496,7 @@ gap: 0.5rem;
   text-align: center;
 }
 
-/* Karten-Stil */
+/* FAQ Karten */
 .faq-card {
   background: #ffffff;
   border-radius: 18px;
@@ -493,13 +525,14 @@ gap: 0.5rem;
   cursor: pointer;
 }
 
-/* Icon (Plus / Minus) */
+/* Plus/Minus Icon */
 .faq-question .icon {
   width: 18px;
   height: 18px;
   position: relative;
 }
 
+/* Icon Balken */
 .faq-question .icon::before,
 .faq-question .icon::after {
   content: "";
@@ -522,13 +555,14 @@ gap: 0.5rem;
   top: 0;
 }
 
-/* Antwort */
+/* Antwort-Container */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
 }
 
+/* Antworttext */
 .faq-answer p {
   padding-bottom: 26px;
   color: #5a5a5a;
@@ -536,11 +570,12 @@ gap: 0.5rem;
   font-size: 0.95rem;
 }
 
-/* Aktiv */
+/* Aktiver Zustand: Antwort ausgeklappt */
 .faq-card.active .faq-answer {
   max-height: 300px;
 }
 
+/* Minus-Symbol statt Plus */
 .faq-card.active .icon::after {
   transform: scaleY(0);
 }

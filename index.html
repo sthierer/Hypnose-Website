@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -13,6 +14,9 @@
 
 <body>
 
+<!-- ============================================
+     HEADER – Logo, Navigation, Mobile-Menü
+     ============================================ -->
 <header class="header">
   <div class="container header-inner">
 
@@ -22,7 +26,7 @@
       <span>Hypnose Praxis</span>
     </a>
 
-    <!-- Mobile Toggle -->
+    <!-- Mobile Navigation Button -->
     <button
       class="nav-toggle"
       aria-expanded="false"
@@ -31,10 +35,10 @@
       ☰
     </button>
 
-    <!-- Navigation -->
+    <!-- Hauptnavigation -->
     <nav id="site-nav" aria-label="Hauptnavigation">
       <ul>
-        <li><a class= underline href="./index.html" aria-current="page">Startseite</a></li>
+        <li><a class="underline" href="./index.html" aria-current="page">Startseite</a></li>
         <li><a href="./Informationen.html">Information über Hypnose</a></li>
         <li><a href="./Anwendungsbereiche.html">Anwendungsbereiche</a></li>
         <li><a href="./Mich.html">Über mich</a></li>
@@ -45,7 +49,14 @@
   </div>
 </header>
 
+<!-- ============================================
+     MAIN CONTENT – enthält alle sichtbaren Sektionen
+     ============================================ -->
 <main class="container">
+
+  <!-- ============================================
+       HERO SECTION – großes Titelbild + Headline + CTA
+       ============================================ -->
   <section class="hero-section">
     <div class="hero">
       <img
@@ -54,24 +65,32 @@
         class="hero-img"
         loading="eager"
       />
+
       <div class="hero-content">
         <h1>Willkommen in der Hypnose Praxis</h1>
         <p>Hier beginnt dein Weg zu mehr Ruhe, Fokus und Veränderung.</p>
         <a href="#kontakt" class="hero-btn">Termin vereinbaren</a>
+      </div>
     </div>
   </section>
 
+  <!-- ============================================
+       LEISTUNGEN – Übersicht der angebotenen Methoden
+       ============================================ -->
   <section class="leistungen">
     <h3>Unsere Leistungen</h3>
+
     <div class="services">
       <div class="service-box">
         <h4>Krankengymnastik</h4>
         <p>Gezielte Übungen zur Verbesserung von Beweglichkeit und Kraft.</p>
       </div>
+
       <div class="service-box">
         <h4>Manuelle Therapie</h4>
         <p>Behandlung von Gelenk- und Muskelbeschwerden.</p>
       </div>
+
       <div class="service-box">
         <h4>Massage</h4>
         <p>Lockerung der Muskulatur und Förderung der Durchblutung.</p>
@@ -79,88 +98,93 @@
     </div>
   </section>
 
+  <!-- ============================================
+       HYPNOSE INFO-SECTION – Bild/Text Split-Layout
+       Erklärung, Vorteile, Schwerpunkte
+       ============================================ -->
+  <section class="section-hypno split-hypno" aria-labelledby="about-title">
 
-
-
-<section class="section-hypno split-hypno" aria-labelledby="about-title">
-  <div class="media">
-
-<figure class="frame">
-  <img src="./assets/sitzung.png" width="500">
-</figure>
-
-  </div>
-
-  <div class="content">
-    <h2 id="about-title">Sanfte Begleitung. Spürbare Veränderung.</h2>
-    <p class="lead">
-      In vertrauensvoller Atmosphäre arbeiten wir mit modernen, wirkungsvollen Hypnose‑Methoden –
-      achtsam, lösungsorientiert und in deinem Tempo.
-    </p>
-
-    <ul class="bullets" aria-label="Schwerpunkte">
-      <li>Stress abbauen & innere Ruhe stärken</li>
-      <li>Fokus finden & Blockaden lösen</li>
-      <li>Nachhaltige Gewohnheitsänderung</li>
-    </ul>
-  </div>
-</section>
-
-
-
-
-
-
-
-  <!-- Fragen-Section -->
-<section class="faq">
-  <h2>Häufig gestellte Fragen</h2>
-
-  <div class="faq-card">
-    <button class="faq-question">
-      <span>Wie läuft eine Hypnose-Sitzung ab?</span>
-      <span class="icon"></span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        Jede Sitzung beginnt mit einem persönlichen Gespräch, in dem wir Ihre
-        Ziele klären. Anschliessend folgt die Hypnose in ruhiger Atmosphäre.
-        Zum Abschluss reflektieren wir die Erfahrung gemeinsam.
-      </p>
+    <!-- Bildbereich -->
+    <div class="media">
+      <figure class="frame">
+        <img src="./assets/sitzung.png" width="500" alt="Hypnose Sitzung">
+      </figure>
     </div>
-  </div>
 
-  <div class="faq-card">
-    <button class="faq-question">
-      <span>Bin ich während der Hypnose ausgeliefert?</span>
-      <span class="icon"></span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        Nein. Sie behalten jederzeit die Kontrolle und bekommen alles mit.
-        Hypnose ist ein Zustand tiefer Entspannung – kein Kontrollverlust.
+    <!-- Textbereich -->
+    <div class="content">
+      <h2 id="about-title">Sanfte Begleitung. Spürbare Veränderung.</h2>
+
+      <p class="lead">
+        In vertrauensvoller Atmosphäre arbeiten wir mit modernen, wirkungsvollen
+        Hypnose‑Methoden – achtsam, lösungsorientiert und in deinem Tempo.
       </p>
+
+      <ul class="bullets" aria-label="Schwerpunkte">
+        <li>Stress abbauen &amp; innere Ruhe stärken</li>
+        <li>Fokus finden &amp; Blockaden lösen</li>
+        <li>Nachhaltige Gewohnheitsänderung</li>
+      </ul>
     </div>
-  </div>
 
-  <div class="faq-card">
-    <button class="faq-question">
-      <span>Kann man aus der Hypnose nicht mehr aufwachen?</span>
-      <span class="icon"></span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        Nein. Hypnose ist ein natürlicher Zustand. Selbst ohne Begleitung
-        kehrt der Körper automatisch in den Wachzustand zurück.
-      </p>
+  </section>
+
+  <!-- ============================================
+       FAQ – Häufig gestellte Fragen, Akkordeon
+       ============================================ -->
+  <section class="faq">
+    <h2>Häufig gestellte Fragen</h2>
+
+    <!-- Frage 1 -->
+    <div class="faq-card">
+      <button class="faq-question">
+        <span>Wie läuft eine Hypnose-Sitzung ab?</span>
+        <span class="icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Jede Sitzung beginnt mit einem persönlichen Gespräch, in dem wir Ihre
+          Ziele klären. Anschliessend folgt die Hypnose in ruhiger Atmosphäre.
+          Zum Abschluss reflektieren wir die Erfahrung gemeinsam.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
 
+    <!-- Frage 2 -->
+    <div class="faq-card">
+      <button class="faq-question">
+        <span>Bin ich während der Hypnose ausgeliefert?</span>
+        <span class="icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Nein. Sie behalten jederzeit die Kontrolle und bekommen alles mit.
+          Hypnose ist ein Zustand tiefer Entspannung – kein Kontrollverlust.
+        </p>
+      </div>
+    </div>
 
+    <!-- Frage 3 -->
+    <div class="faq-card">
+      <button class="faq-question">
+        <span>Kann man aus der Hypnose nicht mehr aufwachen?</span>
+        <span class="icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Nein. Hypnose ist ein natürlicher Zustand. Selbst ohne Begleitung
+          kehrt der Körper automatisch in den Wachzustand zurück.
+        </p>
+      </div>
+    </div>
+
+  </section>
 
 </main>
 
+<!-- ============================================
+     FOOTER – Copyright & rechtliche Infos
+     ============================================ -->
 <footer class="container">
   <p>&copy; 2026 Hypnose Praxis</p>
 </footer>
