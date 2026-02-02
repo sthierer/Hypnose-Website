@@ -7,6 +7,10 @@ const toggle = document.querySelector('.nav-toggle');
 const nav = document.getElementById('site-nav');
 const header = document.querySelector('.header');
 
+if (!toggle || !nav || !header) {
+  console.warn('Navigation nicht vorhanden – Script übersprungen');
+}
+
 /** Helfer: Navigation öffnen/schließen + ARIA Zustand setzen */
 function openNav() {
   nav.classList.add('open');
