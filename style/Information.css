@@ -308,44 +308,6 @@ a[href="./Buchen.html"]::before {
   }
 }
 
-/* =====================================================
-   SERVICES SECTION
-   ===================================================== */
-
-.leistungen {
-  padding: 4rem 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Titel der Services */
-.leistungen h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-/* Grid-Layout für Serviceboxen */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-/* Einzelne Servicebox */
-.service-box {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-.service-box h4 {
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 0.5rem;
-}
 
 /* =====================================================
    CONTENT SECTION
@@ -366,7 +328,7 @@ a[href="./Buchen.html"]::before {
 /* Split-Layout (Bild / Text) */
 .split-hypno {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 0.4fr .95fr;
   gap: clamp(16px, 3vw, 40px);
   align-items: center;
 }
@@ -420,131 +382,21 @@ a[href="./Buchen.html"]::before {
   max-width: 60ch;
 }
 
-/* Bulletliste */
-.bullets {
-  list-style: none;
-  color: #fff;
-  opacity: .95;
-  margin-bottom: 1.4rem;
-}
-
-.bullets li {
-  margin: .35rem 0;
-  padding-left: 1.4rem;
-  position: relative;
-}
-
-.bullets li::before{
-  content: "•";
-  position: absolute; 
-  left: 0;
-  color: #ffe2c7;
-}
-
-
 /* Variante für Bild rechts */
-.section-hypno .media { order: 2; }
-.section-hypno .content { order: 1; }
+.section-hypno .media { order: 1; }
+.section-hypno .content { order: 2; }
 
-/* =====================================================
-   FAQ SECTION
-   ===================================================== */
 
-.faq {
-  padding: 90px 8%;
-  background: #faf7f2;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+/* Ausgangszustand */
+.animation {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* FAQ Titel */
-.faq h2 {
-  font-size: 2.4rem;
-  font-weight: 500;
-  color: #3a3a3a;
-  margin-bottom: 50px;
-  text-align: center;
+/* Sichtbar */
+.animation.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* FAQ Karten */
-.faq-card {
-  background: #ffffff;
-  border-radius: 18px;
-  margin-bottom: 18px;
-  padding: 0 26px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease;
-}
-
-.faq-card:hover {
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
-}
-
-/* Frage */
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 26px 0;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #3a3a3a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-/* Plus/Minus Icon */
-.faq-question .icon {
-  width: 18px;
-  height: 18px;
-  position: relative;
-}
-
-/* Icon Balken */
-.faq-question .icon::before,
-.faq-question .icon::after {
-  content: "";
-  position: absolute;
-  background-color: #c7ab7a;
-  transition: transform 0.4s ease;
-}
-
-.faq-question .icon::before {
-  width: 100%;
-  height: 2px;
-  top: 50%;
-  left: 0;
-}
-
-.faq-question .icon::after {
-  width: 2px;
-  height: 100%;
-  left: 50%;
-  top: 0;
-}
-
-/* Antwort-Container */
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-/* Antworttext */
-.faq-answer p {
-  padding-bottom: 26px;
-  color: #5a5a5a;
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-/* Aktiver Zustand: Antwort ausgeklappt */
-.faq-card.active .faq-answer {
-  max-height: 300px;
-}
-
-/* Minus-Symbol statt Plus */
-.faq-card.active .icon::after {
-  transform: scaleY(0);
-}

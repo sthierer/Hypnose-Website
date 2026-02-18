@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Hypnose – Information & Entspannung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(120deg, #2c3e50, #4ca1af);
+            color: #ffffff;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #ffdd99;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffdd99;
+            color: #2c3e50;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffd066;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hypnose</h1>
+    <p>Information, Entspannung und Fokus</p>
+</header>
+
+<nav>
+    <a href="#was">Was ist Hypnose?</a>
+    <a href="#wirkung">Wirkung</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="was">
+    <h2>Was ist Hypnose?</h2>
+    <p>
+        Hypnose ist ein Zustand tiefer Entspannung und erhöhter Konzentration.
+        In diesem Zustand ist der Geist besonders aufnahmefähig für positive
+        Suggestionen und innere Bilder.
+    </p>
+</section>
+
+<section id="wirkung">
+    <h2>Wie wirkt Hypnose?</h2>
+    <p>
+        Hypnose kann helfen bei Stressabbau, Entspannung, Motivation,
+        Verhaltensänderungen und persönlicher Entwicklung.
+    </p>
+
+    <button onclick="zeigeText()">Mehr erfahren</button>
+    <p id="extraText" style="display:none; margin-top:15px;">
+        Während der Hypnose bleibt man jederzeit ansprechbar und verliert
+        nicht die Kontrolle. Viele Menschen beschreiben den Zustand als
+        angenehm und beruhigend.
+    </p>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>
+        Hast du Fragen zur Hypnose oder möchtest mehr erfahren?
+        Schreib uns gerne eine Nachricht.
+    </p>
+</section>
+
+<footer>
+    © 2026 Hypnose-Info | Entspannung & Bewusstsein
+</footer>
+
+<script>
+    function zeigeText() {
+        const text = document.getElementById("extraText");
+        if (text.style.display === "none") {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
